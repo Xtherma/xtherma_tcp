@@ -136,6 +136,26 @@ Register-Dokumentation für Xtherma Wärmpepumpen.
 
 
 
+### ⚡ Energie
+
+| Register | Description                                              | Mapping           | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 180   | Tag Heizbetrieb thermische Leistungsabgabe                                                           |   Wert/100           |    -       |         
+| 181   | Tag Heizbetrieb elektrische Leistungsaufnahme	                                                       |   Wert/100           |    -       |       
+| 182   | Tag Kühlbetrieb thermische Leistungsabgabe                                                           |   Wert/100           |    -       |       
+| 183   | Tag Kühlbetrieb elektrische Leistungsaufnahme                                                        |   Wert/100           |    -       |       
+| 184   | Tag Warmwasserbetrieb thermische Leistungsabgabe                                                     |   Wert/100           |    -       |       
+| 185   | Tag Warmwasserbetrieb elektrische Leistungsaufnahme                                                  |   Wert/100           |    -       |    
+| 186   | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) thermische Leistungsabgabe                              |   Wert/100           |    -       |         
+| 187   | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) elektrische Leistungsaufnahme                           |   Wert/100           |    -       |       
+| 188   | Tag Warmwasserbetrieb Zusatzheizung Stufe 1 (3 kW) thermische Leistungsabgabe                        |   Wert/100           |    -       |       
+| 189   | Tag Warmwasserbetrieb Zusatzheizung Stufe 1 (3 kW) elektrische Leistungsaufnahme                     |   Wert/100           |    -       |       
+| 190   | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) thermische Leistungsabgabe                              |   Wert/100           |    -       |       
+| 191   | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) elektrische Leistungsaufnahme                           |   Wert/100           |    -       |   
+| 192   | Tag Warmwasserbetrieb Zusatzheizung Stufe 2 (6 kW) thermische Leistungsabgabe                        |   Wert/100           |    -       |         
+| 193   | Tag Warmwasserbetrieb Zusatzheizung Stufe 2 (6 kW) elektrische Leistungsaufnahme	                   |   Wert/100           |    -       |       
+
+
 
 
 
