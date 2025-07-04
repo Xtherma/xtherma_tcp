@@ -63,14 +63,79 @@ Register-Dokumentation für Xtherma Wärmpepumpen.
 | 50    | Warmwasser Sollwert                                         |                  | 25 bis 75°C         |
 | 51    | Warmhalten Sollwert                                         |                  | 30 bis 55°C         |
 
-### 🔥 Heizkurve 2 (Heating Curve 2)
+### 🔌 Vernetzung
 
 | Register | Description                                              | Mapping           | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
 | 100   | Software Version                                            |                  | 240 = 2.40          |
-| 101   | Betriebsmodus                                               |                  |                     |
+| 101   | Betriebsmodus                                               |                  | Standby,Heizbetrieb,Kühlbetrieb,Warmwasser,Automatik |
 | 102   | Anlage auf Grund Fehler gestoppt                            |                  | 1=kein Fehler, 0= Fehler    |
 | 103   | §14a EnWG Status                                            |                  | 0 = Aus, 1 = Ein    |
 | 104   | SG-Ready Status                                             |                  | 0 = Aus, 1 = Ein    |
 | 105   | EVU Status                                                  |                  | 0 = Aus, 1 = Ein    |
+
+
+### 🔥 Heizen Statuswerte
+
+| Register | Description                                              | Mapping           | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 110   | Sollwert Heizbetrieb                                        |   Wert/10        |    -       |         
+| 111   | Sollwert Heizen 1                                           |   Wert/10        |    -       |
+| 112   | Sollwert Heizen 2                                           |   Wert/10        |    -       |
+| 113   | Sollwert Kühlbetrieb                                        |   Wert/10        |    -       |
+| 114   | Sollwert Kühlen 1                                           |   Wert/10        |    -       |
+| 115   | Sollwert Kühlen 2                                           |   Wert/10        |    -       |
+| 116   | Sollwert Warmwasserbereitung                                |   Wert/10        |    -       |
+
+### 🔥 Heizen Regelwerte
+
+| Register | Description                                              | Mapping           | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 120   | TK Heiz-/ Kühltemperatur                                    |   Wert/10        |    -       |         
+| 121   | TK1 Kreis 1 Temperatur                                      |   Wert/10        |    -       |
+| 122   | TK2 Kreis 2 Temperatur                                      |   Wert/10        |    -       |
+| 123   | TW Warmwassertemperatur                                     |   Wert/10        |    -       |
+
+
+### 💧 Hydraulikkreis
+
+| Register | Description                                              | Mapping           | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 130   | V -  Volumenstrom                                                |   Wert/10        |    -       |         
+| 131   | PK - Umwälzpumpe eingeschaltet                                   |                  |    0 = Aus, 1 = Ein      |
+| 132   | PK - Umwälzpumpe Leistung                                        |   Wert/10        |    0-100       |
+| 133   | PK1 - Umwälzpumpe Kreis 1 eingeschaltet                          |                  |    0 = Aus, 1 = Ein      |
+| 134   | PK2 - Umwälzpumpe Kreis 2 eingeschaltet                          |                  |    0 = Aus, 1 = Ein      |
+| 135   | PWW - Zirkulationspumpe Warmwasser eingeschaltet                 |   Wert/10        |    0 = Aus, 1 = Ein      |
+| 136   | VF - Verdichter Frequenz                                         |                  |    0-90    |
+| 137   | LD1 - Lüfter 1 Drehzahl                                          |                  |    0-999   |
+| 138   | LD2 - Lüfter 2 Drehzahl                                          |                  |    0-000   |
+
+
+### 🌡️ Temperaturen
+
+| Register | Description                                              | Mapping           | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 140   | TA -  Außentemperatur                                       |   Wert/10       |    -       |         
+| 141   | TA1 - Außentemperatur Mittelwert 1h                         |   Wert/10       |    -       |       
+| 142   | TA4   - Außentemperatur Mittelwert 4h                       |   Wert/10       |    -       |       
+| 143   | TA8 - Außentemperatur Mittelwert 8h                         |   Wert/10       |    -       |       
+| 144   | TA24 - Außentemperatur Mittelwert 24h                       |   Wert/10       |    -       |       
+
+
+### 🔌 Leistung
+
+| Register | Description                                              | Mapping           | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 170   | Leistungsabgabe Wärmepumpe (thermisch)                      |   Wert*10            |    -       |         
+| 171   | Leistungsaufnahme Wärmepumpe (elektrisch) 	                |   Wert*100           |    -       |       
+| 172   | Leistungszahl Wärmepumpe                                    |   Wert/100           |    -       |       
+| 173   | Leistungszahl Gesamtsystem (inkl. Zusatzheizing)            |   Wert/100           |    -       |       
+| 174   | Leistungsabgabe Zusatz-/Notheizung (thermisch)              |   Wert/100           |    -       |       
+| 175   | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)           |   Wert*100           |    -       |    
+
+
+
+
+
 
