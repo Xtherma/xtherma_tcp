@@ -4,8 +4,10 @@
 
 Register-Dokumentation für Xtherma Wärmpepumpen.
 
-###Nutzung
+###  Nutzung
+
 Port: 502
+
 Slave-ID: 1
 
 Das optimale Pollingintervall beträgt >60 Sekunden. 
