@@ -136,12 +136,12 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 
 | Register | Description                                              | Mapping           | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
-| 170   | Leistungsabgabe Wärmepumpe (thermisch)                      |   Wert*10            |    -       |         
-| 171   | Leistungsaufnahme Wärmepumpe (elektrisch) 	                |   Wert*100           |    -       |       
+| 170   | Leistungsabgabe Wärmepumpe (thermisch)                      |   Wert*10         |    -       |         
+| 171   | Leistungsaufnahme Wärmepumpe (elektrisch) 	                |   Wert*10           |    -       |       
 | 172   | Leistungszahl Wärmepumpe                                    |   Wert/100           |    -       |       
 | 173   | Leistungszahl Gesamtsystem (inkl. Zusatzheizing)            |   Wert/100           |    -       |       
-| 174   | Leistungsabgabe Zusatz-/Notheizung (thermisch)              |   Wert/100           |    -       |       
-| 175   | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)           |   Wert*100           |    -       |    
+| 174   | Leistungsabgabe Zusatz-/Notheizung (thermisch)              |   Wert/*10           |    -       |       
+| 175   | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)           |   Wert*10          |    -       |    
 
 
 
