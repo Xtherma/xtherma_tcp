@@ -62,3 +62,15 @@ Register-Dokumentation für Xtherma Wärmpepumpen.
 |-------|-------------------------------------------------------------|------------------|---------------------|
 | 50    | Warmwasser Sollwert                                         |                  | 25 bis 75°C         |
 | 51    | Warmhalten Sollwert                                         |                  | 30 bis 55°C         |
+
+### 🔥 Heizkurve 2 (Heating Curve 2)
+
+| Register | Description                                              | Mapping           | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 100   | Software Version                                            |                  | 240 = 2.40          |
+| 101   | Betriebsmodus                                               |                  |                     |
+| 102   | Anlage auf Grund Fehler gestoppt                            |                  | 1=kein Fehler, 0= Fehler    |
+| 103   | §14a EnWG Status                                            |                  | 0 = Aus, 1 = Ein    |
+| 104   | SG-Ready Status                                             |                  | 0 = Aus, 1 = Ein    |
+| 105   | EVU Status                                                  |                  | 0 = Aus, 1 = Ein    |
+
