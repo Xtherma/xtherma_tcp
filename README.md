@@ -140,7 +140,7 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 | 171   | Leistungsaufnahme Wärmepumpe (elektrisch) 	                |   Wert*10           |    -       |       
 | 172   | Leistungszahl Wärmepumpe                                    |   Wert/100           |    -       |       
 | 173   | Leistungszahl Gesamtsystem (inkl. Zusatzheizing)            |   Wert/100           |    -       |       
-| 174   | Leistungsabgabe Zusatz-/Notheizung (thermisch)              |   Wert/*10           |    -       |       
+| 174   | Leistungsabgabe Zusatz-/Notheizung (thermisch)              |   Wert*10           |    -       |       
 | 175   | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)           |   Wert*10          |    -       |    
 
 
