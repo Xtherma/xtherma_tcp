@@ -88,22 +88,22 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 
 | Register | Description                                              | Mapping           | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
-| 110   | Sollwert Heizbetrieb                                        |   Wert/10        |    -       |         
-| 111   | Sollwert Heizen 1                                           |   Wert/10        |    -       |
-| 112   | Sollwert Heizen 2                                           |   Wert/10        |    -       |
-| 113   | Sollwert Kühlbetrieb                                        |   Wert/10        |    -       |
-| 114   | Sollwert Kühlen 1                                           |   Wert/10        |    -       |
-| 115   | Sollwert Kühlen 2                                           |   Wert/10        |    -       |
-| 116   | Sollwert Warmwasserbereitung                                |   Wert/10        |    -       |
+| 110   | Sollwert Heizbetrieb                                        |   Wert/10        |    -    °C |         
+| 111   | Sollwert Heizen 1                                           |   Wert/10        |    -    °C |
+| 112   | Sollwert Heizen 2                                           |   Wert/10        |    -    °C |
+| 113   | Sollwert Kühlbetrieb                                        |   Wert/10        |    -    °C |
+| 114   | Sollwert Kühlen 1                                           |   Wert/10        |    -    °C |
+| 115   | Sollwert Kühlen 2                                           |   Wert/10        |    -    °C |
+| 116   | Sollwert Warmwasserbereitung                                |   Wert/10        |    -    °C |
 
 ### 🔥 Heizen Regelwerte
 
 | Register | Description                                              | Mapping           | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
-| 120   | TK Heiz-/ Kühltemperatur                                    |   Wert/10        |    -       |         
-| 121   | TK1 Kreis 1 Temperatur                                      |   Wert/10        |    -       |
-| 122   | TK2 Kreis 2 Temperatur                                      |   Wert/10        |    -       |
-| 123   | TW Warmwassertemperatur                                     |   Wert/10        |    -       |
+| 120   | TK Heiz-/ Kühltemperatur                                    |   Wert/10        |    -    °C |
+| 121   | TK1 Kreis 1 Temperatur                                      |   Wert/10        |    -    °C |
+| 122   | TK2 Kreis 2 Temperatur                                      |   Wert/10        |    -    °C |
+| 123   | TW Warmwassertemperatur                                     |   Wert/10        |    -    °C |
 
 
 ### 💧 Hydraulikkreis
@@ -116,20 +116,20 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 | 133   | PK1 - Umwälzpumpe Kreis 1 eingeschaltet                          |                  |    0 = Aus, 1 = Ein      |
 | 134   | PK2 - Umwälzpumpe Kreis 2 eingeschaltet                          |                  |    0 = Aus, 1 = Ein      |
 | 135   | PWW - Zirkulationspumpe Warmwasser eingeschaltet                 |   Wert/10        |    0 = Aus, 1 = Ein      |
-| 136   | VF - Verdichter Frequenz                                         |                  |    0-90    |
-| 137   | LD1 - Lüfter 1 Drehzahl                                          |                  |    0-999   |
-| 138   | LD2 - Lüfter 2 Drehzahl                                          |                  |    0-999   |
+| 136   | VF - Verdichter Frequenz                                         |                  |    0-90 Hz   |
+| 137   | LD1 - Lüfter 1 Drehzahl                                          |                  |    0-999 rpm  |
+| 138   | LD2 - Lüfter 2 Drehzahl                                          |                  |    0-999 rpm  |
 
 
 ### 🌡️ Temperaturen
 
 | Register | Description                                              | Mapping           | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
-| 140   | TA -  Außentemperatur                                       |   Wert/10       |    -       |         
-| 141   | TA1 - Außentemperatur Mittelwert 1h                         |   Wert/10       |    -       |       
-| 142   | TA4   - Außentemperatur Mittelwert 4h                       |   Wert/10       |    -       |       
-| 143   | TA8 - Außentemperatur Mittelwert 8h                         |   Wert/10       |    -       |       
-| 144   | TA24 - Außentemperatur Mittelwert 24h                       |   Wert/10       |    -       |       
+| 140   | TA -  Außentemperatur                                       |   Wert/10       |    -    °C |
+| 141   | TA1 - Außentemperatur Mittelwert 1h                         |   Wert/10       |    -    °C |
+| 142   | TA4   - Außentemperatur Mittelwert 4h                       |   Wert/10       |    -    °C |
+| 143   | TA8 - Außentemperatur Mittelwert 8h                         |   Wert/10       |    -    °C |
+| 144   | TA24 - Außentemperatur Mittelwert 24h                       |   Wert/10       |    -    °C |
 
 
 ### 🔌 Leistung
