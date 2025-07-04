@@ -109,7 +109,7 @@ Register-Dokumentation für Xtherma Wärmpepumpen.
 | 135   | PWW - Zirkulationspumpe Warmwasser eingeschaltet                 |   Wert/10        |    0 = Aus, 1 = Ein      |
 | 136   | VF - Verdichter Frequenz                                         |                  |    0-90    |
 | 137   | LD1 - Lüfter 1 Drehzahl                                          |                  |    0-999   |
-| 138   | LD2 - Lüfter 2 Drehzahl                                          |                  |    0-000   |
+| 138   | LD2 - Lüfter 2 Drehzahl                                          |                  |    0-999   |
 
 
 ### 🌡️ Temperaturen
