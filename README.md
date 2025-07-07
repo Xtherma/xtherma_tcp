@@ -15,11 +15,11 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 
 ### 🔌 General System State (Einstellungen)
 
-| Register | Description                                                | Mapping          | Value Range         |
+| Register |Nummer |Description                                                | Mapping          | Value Range         |
 |-------|------------------------------------------------------------|------------------|---------------------|
-| 0     | 001 Wärmepumpe ein-/ausgeschaltet                              | 0 = Aus, 1 = Ein | |
-| 1     | 002 Betriebsmodus                                              | 0=Standby, 1 = Heizbetrieb, 2 = Kühl-, 3 = WW-Betrieb, 4=Automatik | |
-| 2     | 003 Warmwasser-Sofort-Funktion aktiviert                       | 0 = Aus, 1 = Ein   | |
+| 0     | 001     | Wärmepumpe ein-/ausgeschaltet                              | 0 = Aus, 1 = Ein | |
+| 1     | 002     | Betriebsmodus                                              | 0=Standby, 1 = Heizbetrieb, 2 = Kühl-, 3 = WW-Betrieb, 4=Automatik | |
+| 2     | 003     | Warmwasser-Sofort-Funktion aktiviert                       | 0 = Aus, 1 = Ein   | |
 
 ### 🔥 Heizkurve 1 (Einstellungen)
 
@@ -78,7 +78,7 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 | Register | Description                                              | Mapping           | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
 | 100   | Software Version                                            |  240 = 2.40      ||
-| 101   | Betriebsmodus                                               | Standby,Heizbetrieb,Kühlbetrieb,Warmwasser,Automatik |                 | 
+| 101   | Betriebsmodus                                               | 1 = Standby,2 = Heizbetrieb,3 = Kühlbetrieb,4 = Warmwasser,5 = Automatik |                 | 
 | 102   | Anlage auf Grund Fehler gestoppt                            | 1=kein Fehler, 0= Fehler|    |
 | 103   | §14a EnWG Status                                            | 0 = Aus, 1 = Ein | |
 | 104   | SG-Ready Status                                             | 0 = Aus, 1 = Normal, 2 = Sperre, 3 = Temperaturen anheben, 4 = Anlaufbefehl | |
