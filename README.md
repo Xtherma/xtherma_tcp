@@ -88,40 +88,44 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 | Register | Key  | Description                               | Mapping                                                                   | Value Range | Unit |
 |----------|------|-------------------------------------------|----------------------------------------------------------------------------|-------------|------|
-| 100      |      | Software Version                          | 240 = 2.40                                                                 |             |      |
-| 101      |      | Betriebsmodus                             | 1 = Standby, 2 = Heizbetrieb, 3 = Kühlbetrieb, 4 = Warmwasser, 5 = Automatik |             |      |
-| 102      |      | Anlage auf Grund Fehler gestoppt          | 1 = kein Fehler, 0 = Fehler                                                |             |      |
-| 103      |      | §14a EnWG Status                          | 0 = Aus, 1 = Ein                                                           |             |      |
-| 104      |      | SG-Ready Status                           | 0 = Aus, 1 = Normal, 2 = Sperre, 3 = Temperaturen anheben, 4 = Anlaufbefehl |             |      |
-| 105      |      | EVU Status                                | 0 = Aus, 1 = Ein                                                           |             |      |
+| 100      | controller_v | Software Version                          | 240 = 2.40                                                                 |             |      |
+| 101      | mode         | Betriebsmodus                             | 1 = Standby, 2 = Heizbetrieb, 3 = Kühlbetrieb, 4 = Warmwasser, 5 = Automatik |             |      |
+| 102      | error     | Anlage auf Grund Fehler gestoppt          | 1 = kein Fehler, 0 = Fehler                                                |             |      |
+| 103      | 14a     | §14a EnWG Status                          | 0 = Aus, 1 = Ein                                                           |             |      |
+| 104      | sg     | SG-Ready Status                           | 0 = Aus, 1 = Normal, 2 = Sperre, 3 = Temperaturen anheben, 4 = Anlaufbefehl |             |      |
+| 105      | evu     | EVU Status                                | 0 = Aus, 1 = Ein                                                           |             |      |
+
+Hinweis: error berücksichtigt folgende Meldungen: P16, F20, S14, S13, S05, S08, F01, F02, F03, F04, F05, F06, F07, F08, F10, F11, F12, P11, E01, E02, E03, E04, E05, E06, E07, E08.
 
 ---
 
-### 🔥 Sollwerte Heizen/Kühlen (Betriebswerte)
+### 🔥 Sollwerte (Betriebswerte)
+Die Sollwerte berücksichtigen die zum aktuellen Zeitpunkt vorliegende Sollwerte, welche z.B. durch SG-Ready beeinflusst werden können.
 
 | Register | Key  | Description                        | Mapping     | Value Range | Unit |
 |----------|------|------------------------------------|-------------|-------------|------|
-| 110      |      | Sollwert Heizbetrieb               | Wert / 10   |             | °C   |
-| 111      |      | Sollwert Heizen 1                  | Wert / 10   |             | °C   |
-| 112      |      | Sollwert Heizen 2                  | Wert / 10   |             | °C   |
-| 113      |      | Sollwert Kühlbetrieb               | Wert / 10   |             | °C   |
-| 114      |      | Sollwert Kühlen 1                  | Wert / 10   |             | °C   |
-| 115      |      | Sollwert Kühlen 2                  | Wert / 10   |             | °C   |
-| 116      |      | Sollwert Warmwasserbereitung       | Wert / 10   |             | °C   |
+| 110      | h_target     | Sollwert Heizbetrieb               | Wert / 10   |             | °C   |
+| 111      | h1_target     | Sollwert Heizen 1                  | Wert / 10   |             | °C   |
+| 112      | h2_target     | Sollwert Heizen 2                  | Wert / 10   |             | °C   |
+| 113      | c_target     | Sollwert Kühlbetrieb               | Wert / 10   |             | °C   |
+| 114      | c1_target     | Sollwert Kühlen 1                  | Wert / 10   |             | °C   |
+| 115      | c2_target     | Sollwert Kühlen 2                  | Wert / 10   |             | °C   |
+| 116      | hw_target     | Sollwert Warmwasserbereitung      | Wert / 10   |             | °C   |
 
 ---
 
 ### 🌡️ Fühlerwerte (Betriebswerte)
+Die Fühlerwerte sind die anliegenden Temperaturfühler der Wärmepumpe.
 
 | Register | Key  | Description                      | Mapping   | Value Range | Unit |
 |----------|------|----------------------------------|-----------|-------------|------|
-| 120      |      | TK Heiz-/Kühltemperatur          | Wert / 10 |             | °C   |
-| 121      |      | TK1 Kreis 1 Temperatur           | Wert / 10 |             | °C   |
-| 122      |      | TK2 Kreis 2 Temperatur           | Wert / 10 |             | °C   |
-| 123      |      | TW Warmwassertemperatur          | Wert / 10 |             | °C   |
-| 124      |      | TR Raumtemperatur                | Wert / 10 |             | °C   |
-| 125      |      | TRL Rücklauftemperatur           | Wert / 10 |             | °C   |
-| 126      |      | TVL Vorlauftemperatur            | Wert / 10 |             | °C   |
+| 120      | tk   | TK Heiz-/Kühltemperatur          | Wert / 10 |             | °C   |
+| 121      | tk1  | TK1 Kreis 1 Temperatur           | Wert / 10 |             | °C   |
+| 122      | tk1  | TK2 Kreis 2 Temperatur           | Wert / 10 |             | °C   |
+| 123      | tw   | TW Warmwassertemperatur          | Wert / 10 |             | °C   |
+| 124      | tr   | TR Raumtemperatur                | Wert / 10 |             | °C   |
+| 125      | trl  | TRL Rücklauftemperatur           | Wert / 10 |             | °C   |
+| 126      | tvl  | TVL Vorlauftemperatur            | Wert / 10 |             | °C   |
 
 ---
 
@@ -129,26 +133,26 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 | Register | Key  | Description                                      | Mapping           | Value Range   | Unit   |
 |----------|------|--------------------------------------------------|-------------------|----------------|--------|
-| 130      |      | V - Volumenstrom                                 | Wert / 10         |                | l/min  |
-| 131      |      | PK - Umwälzpumpe eingeschaltet                   |                   | 0 = Aus, 1 = Ein |       |
-| 132      |      | PK - Umwälzpumpe Leistung                        | Wert / 10         | 0 – 100        | %      |
-| 133      |      | PK1 - Umwälzpumpe Kreis 1 eingeschaltet          | 0 = Aus, 1 = Ein  |                |        |
-| 134      |      | PK2 - Umwälzpumpe Kreis 2 eingeschaltet          | 0 = Aus, 1 = Ein  |                |        |
-| 135      |      | PWW - Zirkulationspumpe Warmwasser eingeschaltet | 0 = Aus, 1 = Ein  |                |        |
-| 136      |      | VF - Verdichterfrequenz                          |                   | 0 – 90         | Hz     |
-| 137      |      | LD1 - Lüfter 1 Drehzahl                          |                   | 0 – 999        | rpm    |
-| 138      |      | LD2 - Lüfter 2 Drehzahl                          |                   | 0 – 999        | rpm    |
+| 130      | v    | V - Volumenstrom                                 | Wert / 10         |                | l/min  |
+| 131      | pk   | PK - Umwälzpumpe eingeschaltet                   |                   | 0 = Aus, 1 = Ein |       |
+| 132      | pkl  | PK - Umwälzpumpe Leistung                        | Wert / 10         | 0 – 100        | %      |
+| 133      | pk1  | PK1 - Umwälzpumpe Kreis 1 eingeschaltet          | 0 = Aus, 1 = Ein  |                |        |
+| 134      | pk2  | PK2 - Umwälzpumpe Kreis 2 eingeschaltet          | 0 = Aus, 1 = Ein  |                |        |
+| 135      | pww  | PWW - Zirkulationspumpe Warmwasser eingeschaltet | 0 = Aus, 1 = Ein  |                |        |
+| 136      | vf   | VF - Verdichterfrequenz                          |                   | 0 – 90         | Hz     |
+| 137      | ld1  | LD1 - Lüfter 1 Drehzahl                          |                   | 0 – 999        | rpm    |
+| 138      | ld2  | LD2 - Lüfter 2 Drehzahl                          |                   | 0 – 999        | rpm    |
 ---
 
 ### 🌡️ Außentemperaturen (Betriebswerte)
 
 | Register | Key  | Description                           | Mapping     | Value Range | Unit |
 |----------|------|---------------------------------------|-------------|-------------|------|
-| 140      |      | TA - Außentemperatur                  | Wert / 10   |             | °C   |
-| 141      |      | TA1 - Außentemperatur Mittelwert 1h   | Wert / 10   |             | °C   |
-| 142      |      | TA4 - Außentemperatur Mittelwert 4h   | Wert / 10   |             | °C   |
-| 143      |      | TA8 - Außentemperatur Mittelwert 8h   | Wert / 10   |             | °C   |
-| 144      |      | TA24 - Außentemperatur Mittelwert 24h | Wert / 10   |             | °C   |
+| 140      | ta   | TA - Außentemperatur                  | Wert / 10   |             | °C   |
+| 141      | ta1  | TA1 - Außentemperatur Mittelwert 1h   | Wert / 10   |             | °C   |
+| 142      | ta4  | TA4 - Außentemperatur Mittelwert 4h   | Wert / 10   |             | °C   |
+| 143      | ta8  | TA8 - Außentemperatur Mittelwert 8h   | Wert / 10   |             | °C   |
+| 144      | ta24 | TA24 - Außentemperatur Mittelwert 24h | Wert / 10   |             | °C   |
 
 ---
 
@@ -156,12 +160,12 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 | Register | Key  | Description                                          | Mapping     | Value Range | Unit |
 |----------|------|------------------------------------------------------|-------------|-------------|------|
-| 170      |      | Leistungsabgabe Wärmepumpe (thermisch)              | Wert * 10   |             | kW   |
-| 171      |      | Leistungsaufnahme Wärmepumpe (elektrisch)           | Wert * 10   |             | kW   |
-| 172      |      | Leistungszahl Wärmepumpe                            | Wert / 100  |             | –    |
-| 173      |      | Leistungszahl Gesamtsystem (inkl. Zusatzheizung)    | Wert / 100  |             | –    |
-| 174      |      | Leistungsabgabe Zusatz-/Notheizung (thermisch)      | Wert * 10   |             | kW   |
-| 175      |      | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)   | Wert * 10   |             | kW   |
+| 170      | out_hp | Leistungsabgabe Wärmepumpe (thermisch)              | Wert * 10   |             | kW   |
+| 171      | in_hp  | Leistungsaufnahme Wärmepumpe (elektrisch)           | Wert * 10   |             | kW   |
+| 172      | efficiency_hp     | Leistungszahl Wärmepumpe                            | Wert / 100  |             | –    |
+| 173      | efficiency_total  | Leistungszahl Gesamtsystem (inkl. Zusatzheizung)    | Wert / 100  |             | –    |
+| 174      | out_backup        | Leistungsabgabe Zusatz-/Notheizung (thermisch)      | Wert * 10   |             | kW   |
+| 175      | in_backup         | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)   | Wert * 10   |             | kW   |
 
 ---
 
@@ -169,18 +173,18 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 | Register | Key  | Description                                                          | Mapping     | Value Range | Unit |
 |----------|------|----------------------------------------------------------------------|-------------|-------------|------|
-| 180      |      | Tag Heizbetrieb thermische Leistungsabgabe                           | Wert / 100  |             | kWh  |
-| 181      |      | Tag Heizbetrieb elektrische Leistungsaufnahme                        | Wert / 100  |             | kWh  |
-| 182      |      | Tag Kühlbetrieb thermische Leistungsabgabe                           | Wert / 100  |             | kWh  |
-| 183      |      | Tag Kühlbetrieb elektrische Leistungsaufnahme                        | Wert / 100  |             | kWh  |
-| 184      |      | Tag Warmwasserbetrieb thermische Leistungsabgabe                     | Wert / 100  |             | kWh  |
-| 185      |      | Tag Warmwasserbetrieb elektrische Leistungsaufnahme                  | Wert / 100  |             | kWh  |
-| 186      |      | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) therm. Leistungsabgabe  | Wert / 100  |             | kWh  |
-| 187      |      | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
-| 188      |      | Tag WW-Betrieb Zusatzheizung Stufe 1 (3 kW) therm. Leistungsabgabe   | Wert / 100  |             | kWh  |
-| 189      |      | Tag WW-Betrieb Zusatzheizung Stufe 1 (3 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
-| 190      |      | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) therm. Leistungsabgabe  | Wert / 100  |             | kWh  |
-| 191      |      | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) elektr. Leistungsaufnahme | Wert / 100 |             | kWh  |
-| 192      |      | Tag WW-Betrieb Zusatzheizung Stufe 2 (6 kW) therm. Leistungsabgabe   | Wert / 100  |             | kWh  |
-| 193      |      | Tag WW-Betrieb Zusatzheizung Stufe 2 (6 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
+| 180      | day_hp_out_h     | Tag Heizbetrieb thermische Leistungsabgabe                           | Wert / 100  |             | kWh  |
+| 181      | day_hp_in_h    | Tag Heizbetrieb elektrische Leistungsaufnahme                        | Wert / 100  |             | kWh  |
+| 182      | day_hp_out_c     | Tag Kühlbetrieb thermische Leistungsabgabe                           | Wert / 100  |             | kWh  |
+| 183      | day_hp_in_c     | Tag Kühlbetrieb elektrische Leistungsaufnahme                        | Wert / 100  |             | kWh  |
+| 184      | day_hp_out_hw     | Tag Warmwasserbetrieb thermische Leistungsabgabe                     | Wert / 100  |             | kWh  |
+| 185      | day_hp_in_hw     | Tag Warmwasserbetrieb elektrische Leistungsaufnahme                  | Wert / 100  |             | kWh  |
+| 186      | day_backup3_out_h     | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) therm. Leistungsabgabe  | Wert / 100  |             | kWh  |
+| 187      | day_backup3_in_h     | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
+| 188      | day_backup3_out_hw     | Tag WW-Betrieb Zusatzheizung Stufe 1 (3 kW) therm. Leistungsabgabe   | Wert / 100  |             | kWh  |
+| 189      | day_backup3_in_hw     | Tag WW-Betrieb Zusatzheizung Stufe 1 (3 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
+| 190      | day_backup6_out_h     | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) therm. Leistungsabgabe  | Wert / 100  |             | kWh  |
+| 191      | day_backup6_in_h     | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) elektr. Leistungsaufnahme | Wert / 100 |             | kWh  |
+| 192      | day_backup6_out_hw     | Tag WW-Betrieb Zusatzheizung Stufe 2 (6 kW) therm. Leistungsabgabe   | Wert / 100  |             | kWh  |
+| 193      | day_backup6_in_hw     | Tag WW-Betrieb Zusatzheizung Stufe 2 (6 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
 
