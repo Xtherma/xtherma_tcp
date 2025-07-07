@@ -23,14 +23,15 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 
 ### 🔥 Heizkurve 1 (Einstellungen)
 
-| Register | Description                                                 | Mapping          | Value Range         |
-|-------|-------------------------------------------------------------|------------------|---------------------|
-| 10    | 310 Heizkurve 1 aktiviert                                       | 0 = Aus, 1 = Ein | |
-| 11    | 311 Außentemperatur niedrig (P1)                                |                  | -20 bis 25°C        |
-| 12    | 312 Außentemperatur hoch (P2)                                   |                  | -9 bis 25°C         |
-| 13    | 315 Heiztemperatur hoch (P1)                                    |                  | 20 bis 75°C         |
-| 14    | 316 Heiztemperatur niedrig (P2)                                 |                  | 20 bis 75°C         |
-| 15    | 320 Konstante Heiztemperatur (Sollwert)                         |                  | 20 bis 75°C         |
+| Register | Nummer | Description                          | Mapping           | Value Range     | Unit |
+|----------|--------|--------------------------------------|-------------------|------------------|------|
+| 10       | 310    | Heizkurve 1 aktiviert                | 0 = Aus, 1 = Ein  |                  |      |
+| 11       | 311    | Außentemperatur niedrig (P1)         |                   | -20 bis 25       | °C   |
+| 12       | 312    | Außentemperatur hoch (P2)            |                   | -9 bis 25        | °C   |
+| 13       | 315    | Heiztemperatur hoch (P1)             |                   | 20 bis 75        | °C   |
+| 14       | 316    | Heiztemperatur niedrig (P2)          |                   | 20 bis 75        | °C   |
+| 15       | 320    | Konstante Heiztemperatur (Sollwert)  |                   | 20 bis 75        | °C   |
+
 
 ### ❄️ Kühlkurve 1 (Einstellungen)
 
