@@ -15,11 +15,11 @@ Das optimale Pollingintervall beträgt >60 Sekunden.
 
 ### 🔌 General System State
 
-| Register | Description                                                | Mapping          | Value Range         |
+| Register | Einstellung  | Description                                                | Mapping          | Value Range         |
 |-------|------------------------------------------------------------|------------------|---------------------|
-| 0     | Wärmepumpe ein-/ausgeschaltet                              |                  | 0 = Aus, 1 = Ein    |
-| 1     | Betriebsmodus                                              |                  | 0=Standby, Heiz-, Kühl-, WW-Betrieb, 4=Automatik |
-| 2     | Warmwasser-Sofort-Funktion aktiviert                       |                  | 0 = Aus, 1 = Ein    |
+| 0     | 001     | Wärmepumpe ein-/ausgeschaltet                              |                  | 0 = Aus, 1 = Ein    |
+| 1     | 002     | Betriebsmodus                                              |                  | 0=Standby, Heiz-, Kühl-, WW-Betrieb, 4=Automatik |
+| 2     | 003     |Warmwasser-Sofort-Funktion aktiviert                       |                  | 0 = Aus, 1 = Ein    |
 
 ### 🔥 Heizkurve 1 (Heating Curve 1)
 
