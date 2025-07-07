@@ -13,64 +13,65 @@ Slave-ID: 1
 Das optimale Pollingintervall beträgt >60 Sekunden. 
 
 
-### 🔌 General System State
+### 🔌 General System State (Einstellungen)
 
-| Register | Einstellung  | Description                                                | Mapping          | Value Range         |
+| Register | Description                                                | Mapping          | Value Range         |
 |-------|------------------------------------------------------------|------------------|---------------------|
-| 0     | 001     | Wärmepumpe ein-/ausgeschaltet                              |                  | 0 = Aus, 1 = Ein    |
-| 1     | 002     | Betriebsmodus                                              |                  | 0=Standby, Heiz-, Kühl-, WW-Betrieb, 4=Automatik |
-| 2     | 003     |Warmwasser-Sofort-Funktion aktiviert                       |                  | 0 = Aus, 1 = Ein    |
+| 0     | 001 Wärmepumpe ein-/ausgeschaltet                              |                  | 0 = Aus, 1 = Ein    |
+| 1     | 002 Betriebsmodus                                              |                  | 0=Standby, Heiz-, Kühl-, WW-Betrieb, 4=Automatik |
+| 2     | 003 Warmwasser-Sofort-Funktion aktiviert                       |                  | 0 = Aus, 1 = Ein    |
 
-### 🔥 Heizkurve 1 (Heating Curve 1)
+### 🔥 Heizkurve 1 (Einstellungen)
 
 | Register | Description                                                 | Mapping          | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
-| 10    | Heizkurve 1 aktiviert                                       |                  | 0 = Aus, 1 = Ein    |
-| 11    | Außentemperatur niedrig (P1)                                |                  | -20 bis 25°C        |
-| 12    | Außentemperatur hoch (P2)                                   |                  | -9 bis 25°C         |
-| 13    | Heiztemperatur hoch (P1)                                    |                  | 20 bis 75°C         |
-| 14    | Heiztemperatur niedrig (P2)                                 |                  | 20 bis 75°C         |
-| 15    | Konstante Heiztemperatur (Sollwert)                         |                  | 20 bis 75°C         |
+| 10    | 310 Heizkurve 1 aktiviert                                       |                  | 0 = Aus, 1 = Ein    |
+| 11    | 311 Außentemperatur niedrig (P1)                                |                  | -20 bis 25°C        |
+| 12    | 312 Außentemperatur hoch (P2)                                   |                  | -9 bis 25°C         |
+| 13    | 315 Heiztemperatur hoch (P1)                                    |                  | 20 bis 75°C         |
+| 14    | 316 Heiztemperatur niedrig (P2)                                 |                  | 20 bis 75°C         |
+| 15    | 320 Konstante Heiztemperatur (Sollwert)                         |                  | 20 bis 75°C         |
 
-### ❄️ Kühlkurve 1 (Cooling Curve 1)
+### ❄️ Kühlkurve 1 (Einstellungen)
 
 | Register | Description                                                 | Mapping         | Value Range         |
 |-------|-------------------------------------------------------------|-----------------|---------------------|
-| 20    | Kühlkurve 1 aktiviert                                       |                 | 0 = Aus, 1 = Ein    |
-| 21    | Außentemperatur niedrig (P1)                                |                 | 16 bis 32°C         |
-| 22    | Außentemperatur hoch (P2)                                   |                 | 29 bis 37°C         |
-| 23    | Kühltemperatur hoch (P1)                                    |                 | 7 bis 30°C          |
-| 24    | Kühltemperatur niedrig (P2)                                 |                 | 7 bis 30°C          |
-| 25    | Konstante Kühltemperatur (Sollwert)                         |                 | 7 bis 30°C          |
+| 20    | 350 Kühlkurve 1 aktiviert                                       |                 | 0 = Aus, 1 = Ein    |
+| 21    | 351 Außentemperatur niedrig (P1)                                |                 | 16 bis 32°C         |
+| 22    | 352 Außentemperatur hoch (P2)                                   |                 | 29 bis 37°C         |
+| 23    | 355 Kühltemperatur hoch (P1)                                    |                 | 7 bis 30°C          |
+| 24    | 356 Kühltemperatur niedrig (P2)                                 |                 | 7 bis 30°C          |
+| 25    | 360 Konstante Kühltemperatur (Sollwert)                         |                 | 7 bis 30°C          |
 
-### 🔥 Heizkurve 2 (Heating Curve 2)
+### 🔥 Heizkurve 2 (Einstellungen)
 
 | Register | Description                                                 | Mapping           | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
-| 30    | Heizkurve 2 aktiviert                                       |                  | 0 = Aus, 1 = Ein    |
-| 31    | Außentemperatur niedrig (P1)                                |                  | 16 bis 32°C         |
-| 32    | Außentemperatur hoch (P2)                                   |                  | 29 bis 37°C         |
-| 33    | Heiztemperatur hoch (P1)                                    |                  | 7 bis 30°C          |
-| 34    | Heiztemperatur niedrig (P2)                                 |                  | 7 bis 30°C          |
-| 35    | Konstante Heiztemperatur (Sollwert)                         |                  | 7 bis 30°C          |
-| 36    | Kühlkurve 2 aktiviert                                       |                  | 0 = Aus, 1 = Ein    |
+| 30    | 410 Heizkurve 2 aktiviert                                       |                  | 0 = Aus, 1 = Ein    |
+| 31    | 411 Außentemperatur niedrig (P1)                                |                  | 16 bis 32°C         |
+| 32    | 412 Außentemperatur hoch (P2)                                   |                  | 29 bis 37°C         |
+| 33    | 415 Heiztemperatur hoch (P1)                                    |                  | 7 bis 30°C          |
+| 34    | 416 Heiztemperatur niedrig (P2)                                 |                  | 7 bis 30°C          |
+| 35    | 420 Konstante Heiztemperatur (Sollwert)                         |                  | 7 bis 30°C          |
 
-### ❄️ Kühlkurve 2 (Cooling Curve 2)
 
-| Register | Description                                                 | Mapping          | Value Range         |
-|-------|-------------------------------------------------------------|------------------|---------------------|
-| 40    | Außentemperatur niedrig (P1)                                |                  | -20 bis 25°C        |
-| 41    | Außentemperatur hoch (P2)                                   |                  | -20 bis 25°C        |
-| 42    | Kühltemperatur hoch (P1)                                    |                  | 20 bis 75°C         |
-| 43    | Kühltemperatur niedrig (P2)                                 |                  | 20 bis 75°C         |
-| 44    | Konstante Kühltemperatur (Sollwert)                         |                  | 20 bis 75°C         |
-
-### 🚿 Warmwasser (Hot Water)
+### ❄️ Kühlkurve 2 (Einstellungen)
 
 | Register | Description                                                 | Mapping          | Value Range         |
 |-------|-------------------------------------------------------------|------------------|---------------------|
-| 50    | Warmwasser Sollwert                                         |                  | 25 bis 75°C         |
-| 51    | Warmhalten Sollwert                                         |                  | 30 bis 55°C         |
+| 40    | 450 Kühlkurve 2 aktiviert                                       |                  | 0 = Aus, 1 = Ein    |
+| 41    | 451 Außentemperatur niedrig (P1)                                |                  | -20 bis 25°C        |
+| 42    | 452 Außentemperatur hoch (P2)                                   |                  | -20 bis 25°C        |
+| 43    | 455 Kühltemperatur hoch (P1)                                    |                  | 20 bis 75°C         |
+| 44    | 456 Kühltemperatur niedrig (P2)                                 |                  | 20 bis 75°C         |
+| 45    | 560 Konstante Kühltemperatur (Sollwert)                         |                  | 20 bis 75°C         |
+
+### 🚿 Warmwasser (Einstellungen)
+
+| Register | Description                                                 | Mapping          | Value Range         |
+|-------|-------------------------------------------------------------|------------------|---------------------|
+| 50    | 501 Warmwasser Sollwert                                         |                  | 25 bis 75°C         |
+| 51    | 522 Warmhalten Sollwert                                         |                  | 30 bis 55°C         |
 
 ### 🔌 Vernetzung
 
