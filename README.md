@@ -95,7 +95,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 | 104      | sg     | SG-Ready Status                           | 0 = Aus, 1 = Normal, 2 = Sperre, 3 = Temperaturen anheben, 4 = Anlaufbefehl |             |      |
 | 105      | evu     | EVU Status                                | 0 = Aus, 1 = Ein                                                           |             |      |
 
-Hinweis: error berücksichtigt folgende Meldungen: P16, F20, S14, S13, S05, S08, F01, F02, F03, F04, F05, F06, F07, F08, F10, F11, F12, P11, E01, E02, E03, E04, E05, E06, E07, E08.
+Hinweis: Error berücksichtigt folgende Meldungen: P16, F20, S14, S13, S05, S08, F01, F02, F03, F04, F05, F06, F07, F08, F10, F11, F12, P11, E01, E02, E03, E04, E05, E06, E07, E08.
 
 ---
 
