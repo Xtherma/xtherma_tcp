@@ -6,6 +6,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 ### Nutzung
 
+- **Rechte:** Aktuell nur Leserechte
 - **Port:** 502  
 - **Slave-ID:** 1  
 - **Optimales Pollingintervall:** >60 Sekunden  
