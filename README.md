@@ -89,7 +89,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 ---
 
-### 🚿 Vernetzung
+### ⚡ Vernetzung
 
 | Register | Nummer | Description                 | Mapping | Value Range | Unit |
 |----------|--------|-----------------------------|---------|-------------|------|
