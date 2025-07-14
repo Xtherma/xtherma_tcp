@@ -84,6 +84,19 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 ---
 
+### 🚿 Vernetzung
+
+| Register | Nummer | Description                 | Mapping | Value Range | Unit |
+|----------|--------|-----------------------------|---------|-------------|------|
+| 60       | -    | SG-Ready aktivieren                              | 0 = Kein Eingriff, 1 = Normalbetrieb 2 = Sperre, 3 = Temperaturen anheben | -   | -   |
+| 61       | 811    | SG Ready Heiztemperatur anheben um (ΔT)        |         | 0 bis 30   | K   |
+| 61       | 812    | SG Ready Warmwassertemperatur anheben um (ΔT)  |         | 0 bis 30   | K   |
+| 61       | 813    | SG Ready Kühltemperatur senken um (ΔT)         |         | 0 bis 30   | K   |
+| 65       | 501    | §14a EnWG manuell aktivieren                   | 0 = Aus, 1 = Ein  |  |      |
+
+
+---
+
 
 ### 🔌 Allgemeines (Betriebswerte)
 
