@@ -6,7 +6,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 ### Nutzung
 
-- **Rechte:** Aktuell nur Leserechte
+- **Rechte:** Block 0-99: Lesen & Schreiben (je alle 30 min), Block 100 - 199 nur lesen
 - **Port:** 502  
 - **Slave-ID:** 1  
 - **Optimales Pollingintervall:** >60 Sekunden  
@@ -14,6 +14,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 ---
 ### Changelog
 
+21.07.2025: Schreibrechte für Einstellungen (0-99)
 14.07.2025: Ergänzen SG-Ready (60 - 63) und EnWG §14a (65)
 
 ---
