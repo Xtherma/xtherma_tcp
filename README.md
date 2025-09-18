@@ -100,6 +100,16 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 | 63       | 813    | SG Ready Kühltemperatur senken um (ΔT)         |         | 0 bis 30   | K   |
 | 65       | -    | §14a EnWG manuell aktivieren                   | 0 = Aus, 1 = Ein  |  |      |
 
+---
+
+### ⚡ Überschuss-Regelung
+
+| Register | Nummer | Description                 | Mapping | Value Range | Unit |
+|----------|--------|-----------------------------|---------|-------------|------|
+| 70       | -    | Überschuss-Regelung aktivieren                              | 0 = Deaktiviert, 1 = Aktiviert| -   | -   |
+| 71       | -    | Verfügbarer Überschuss        |         | 0 bis 100.000   | W   |
+
+
 
 ---
 
