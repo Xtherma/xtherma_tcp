@@ -102,7 +102,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 ---
 
-### ⚡ Überschuss-Regelung
+### ⚡ Überschuss-Regelung (beta-Version)
 
 | Register | Nummer | Description                 | Mapping | Value Range | Unit |
 |----------|--------|-----------------------------|---------|-------------|------|
