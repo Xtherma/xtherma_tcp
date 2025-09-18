@@ -190,14 +190,14 @@ Die Fühlerwerte sind die anliegenden Temperaturfühler der Wärmepumpe.
 
 | Register | Key  | Description                                          | Mapping     | Value Range | Unit |
 |----------|------|------------------------------------------------------|-------------|-------------|------|
-| 170      | out_hp | Leistungsabgabe Wärmepumpe (thermisch)              | Wert * 10   |             | kW   |
-| 171      | in_hp  | Leistungsaufnahme Wärmepumpe (elektrisch)           | Wert * 10   |             | kW   |
+| 170      | out_hp | Leistungsabgabe Wärmepumpe (thermisch)              | Wert * 10   |             | W   |
+| 171      | in_hp  | Leistungsaufnahme Wärmepumpe (elektrisch)           | Wert * 10   |             | W   |
 | 172      | efficiency_hp     | Leistungszahl Wärmepumpe                            | Wert / 100  |             | –    |
 | 173      | efficiency_total  | Leistungszahl Gesamtsystem (inkl. Zusatzheizung)    | Wert / 100  |             | –    |
-| 174      | out_backup        | Leistungsabgabe Zusatz-/Notheizung (thermisch)      | Wert * 10   |             | kW   |
-| 175      | in_backup         | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)   | Wert * 10   |             | kW   |
-| 176      | out_total        | Leistungsabgabe Gesamtsystem (thermisch)      | Wert * 10   |             | kW   |
-| 177      | in_total         | Leistungsaufnahme Gesamtsystem (elektrisch)   | Wert * 10   |             | kW   |
+| 174      | out_backup        | Leistungsabgabe Zusatz-/Notheizung (thermisch)      | Wert * 10   |             | W   |
+| 175      | in_backup         | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)   | Wert * 10   |             | W   |
+| 176      | out_total        | Leistungsabgabe Gesamtsystem (thermisch)      | Wert * 10   |             | W   |
+| 177      | in_total         | Leistungsaufnahme Gesamtsystem (elektrisch)   | Wert * 10   |             | W   |
 
 ---
 
