@@ -48,7 +48,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 |----------|--------|--------------------------------------|-------------------|-------------|------|
 | 20       | 350    | Kühlkurve 1 aktiviert                | 0 = Aus, 1 = Ein  |             |      |
 | 21       | 351    | Außentemperatur niedrig (P1)         |                   | 16 bis 32   | °C   |
-| 22       | 352    | Außentemperatur hoch (P2)            |                   | 29 bis 37   | °C   |
+| 22       | 352    | Außentemperatur hoch (P2)            |                   | 29 bis 45   | °C   |
 | 23       | 355    | Kühltemperatur hoch (P1)             |                   | 7 bis 30    | °C   |
 | 24       | 356    | Kühltemperatur niedrig (P2)          |                   | 7 bis 30    | °C   |
 | 25       | 360    | Konstante Kühltemperatur (Sollwert)  |                   | 7 bis 30    | °C   |
@@ -60,11 +60,11 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 | Register | Nummer | Description                          | Mapping           | Value Range | Unit |
 |----------|--------|--------------------------------------|-------------------|-------------|------|
 | 30       | 410    | Heizkurve 2 aktiviert                | 0 = Aus, 1 = Ein  |             |      |
-| 31       | 411    | Außentemperatur niedrig (P1)         |                   | 16 bis 32   | °C   |
-| 32       | 412    | Außentemperatur hoch (P2)            |                   | 29 bis 37   | °C   |
-| 33       | 415    | Heiztemperatur hoch (P1)             |                   | 7 bis 30    | °C   |
-| 34       | 416    | Heiztemperatur niedrig (P2)          |                   | 7 bis 30    | °C   |
-| 35       | 420    | Konstante Heiztemperatur (Sollwert)  |                   | 7 bis 30    | °C   |
+| 31       | 411    | Außentemperatur niedrig (P1)         |                   | -20 bis 25  | °C   |
+| 32       | 412    | Außentemperatur hoch (P2)            |                   | -9 bis 25   | °C   |
+| 33       | 415    | Heiztemperatur hoch (P1)             |                   | 20 bis 75   | °C   |
+| 34       | 416    | Heiztemperatur niedrig (P2)          |                   | 20 bis 75   | °C   |
+| 35       | 420    | Konstante Heiztemperatur (Sollwert)  |                   | 20 bis 75   | °C   |
 
 ---
 
@@ -73,11 +73,11 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 | Register | Nummer | Description                          | Mapping           | Value Range | Unit |
 |----------|--------|--------------------------------------|-------------------|-------------|------|
 | 40       | 450    | Kühlkurve 2 aktiviert                | 0 = Aus, 1 = Ein  |             |      |
-| 41       | 451    | Außentemperatur niedrig (P1)         |                   | -20 bis 25  | °C   |
-| 42       | 452    | Außentemperatur hoch (P2)            |                   | -20 bis 25  | °C   |
-| 43       | 455    | Kühltemperatur hoch (P1)             |                   | 20 bis 75   | °C   |
-| 44       | 456    | Kühltemperatur niedrig (P2)          |                   | 20 bis 75   | °C   |
-| 45       | 560    | Konstante Kühltemperatur (Sollwert)  |                   | 20 bis 75   | °C   |
+| 41       | 451    | Außentemperatur niedrig (P1)         |                   | 16 bis 32   | °C   |
+| 42       | 452    | Außentemperatur hoch (P2)            |                   | 29 bis 45   | °C   |
+| 43       | 455    | Kühltemperatur hoch (P1)             |                   | 7 bis 30    | °C   |
+| 44       | 456    | Kühltemperatur niedrig (P2)          |                   | 7 bis 30    | °C   |
+| 45       | 560    | Konstante Kühltemperatur (Sollwert)  |                   | 7 bis 30    | °C   |
 
 ---
 
@@ -94,11 +94,11 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 
 | Register | Nummer | Description                 | Mapping | Value Range | Unit |
 |----------|--------|-----------------------------|---------|-------------|------|
-| 60       | -    | SG-Ready aktivieren                              | 0 = Kein Eingriff, 1 = Normalbetrieb 2 = Sperre, 3 = Temperaturen anheben | -   | -   |
+| 60       | -      | SG-Ready aktivieren                            | 0 = Kein Eingriff, 1 = Normalbetrieb 2 = Sperre, 3 = Temperaturen anheben | -   | -   |
 | 61       | 811    | SG Ready Heiztemperatur anheben um (ΔT)        |         | 0 bis 30   | K   |
 | 62       | 812    | SG Ready Warmwassertemperatur anheben um (ΔT)  |         | 0 bis 30   | K   |
 | 63       | 813    | SG Ready Kühltemperatur senken um (ΔT)         |         | 0 bis 30   | K   |
-| 65       | -    | §14a EnWG manuell aktivieren                   | 0 = Aus, 1 = Ein  |  |      |
+| 65       | -      | §14a EnWG manuell aktivieren                   | 0 = Aus, 1 = Ein  |  |      |
 
 ---
 
@@ -140,7 +140,7 @@ Die Sollwerte berücksichtigen die zum aktuellen Zeitpunkt vorliegende Sollwerte
 | 113      | c_target     | Sollwert Kühlbetrieb               | Wert / 10   |             | °C   |
 | 114      | c1_target     | Sollwert Kühlen 1                  | Wert / 10   |             | °C   |
 | 115      | c2_target     | Sollwert Kühlen 2                  | Wert / 10   |             | °C   |
-| 116      | hw_target     | Sollwert Warmwasserbereitung      | Wert / 10   |             | °C   |
+| 116      | hw_target     | Sollwert Warmwasserbereitung      | Wert   |             | °C   |
 
 ---
 
