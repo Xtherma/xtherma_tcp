@@ -151,7 +151,7 @@ Die Fühlerwerte sind die anliegenden Temperaturfühler der Wärmepumpe.
 |----------|------|----------------------------------|-----------|-------------|------|
 | 120      | tk   | TK Heiz-/Kühltemperatur          | Wert / 10 |             | °C   |
 | 121      | tk1  | TK1 Kreis 1 Temperatur           | Wert / 10 |             | °C   |
-| 122      | tk1  | TK2 Kreis 2 Temperatur           | Wert / 10 |             | °C   |
+| 122      | tk2  | TK2 Kreis 2 Temperatur           | Wert / 10 |             | °C   |
 | 123      | tw   | TW Warmwassertemperatur          | Wert / 10 |             | °C   |
 | 124      | tr   | TR Raumtemperatur                | Wert / 10 |             | °C   |
 | 125      | trl  | TRL Rücklauftemperatur           | Wert / 10 |             | °C   |
