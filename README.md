@@ -7,7 +7,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 ### Nutzung
 
 - **Rechte:** Block 0-99: Lesen & Schreiben (je alle 1 min; ausgenommen 0, 1, 2, 60, 65 nur alle 30 min), Block 100 - 199 nur lesen
-- **Register-Arten:** Alle Register sind 16Bit Holding Register
+- **Register-Arten:** Alle Register sind 16Bit Holding Register. 
 - **Port:** 502  
 - **Slave-ID:** 1  
 - **Optimales Pollingintervall:** >60 Sekunden  
@@ -15,209 +15,204 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 ---
 ### Changelog
 
-21.07.2025: Schreibrechte für Einstellungen (0-99)
-14.07.2025: Ergänzen SG-Ready (60 - 63) und EnWG §14a (65)
+21.07.2025: Schreibrechte für Einstellungen (0-99)<br>
+14.07.2025: Ergänzen SG-Ready (60 - 63) und EnWG §14a (65)<br>
+01.04.2026: Dokumentation ergänzt
 
 ---
 
-### 🔌 General System State (Einstellungen)
+## 🔌 General System State (Einstellungen)
 
-| Register | Nummer | Description                                | Mapping                                            | Value Range |
-|----------|--------|--------------------------------------------|----------------------------------------------------|-------------|
-| 0        | 001    | Wärmepumpe ein-/ausgeschaltet              | 0 = Aus, 1 = Ein                                   |             |
-| 1        | 002    | Betriebsmodus                              | 0 = Standby, 1 = Heizbetrieb, 2 = Kühlbetrieb, 3 = WW-Betrieb, 4 = Automatik |             |
-| 2        | 003    | Warmwasser-Sofort-Funktion aktiviert       | 0 = Aus, 1 = Ein                                   |             |
-
----
-
-### 🔥 Heizkurve 1 (Einstellungen)
-
-| Register | Nummer | Description                          | Mapping           | Value Range | Unit |
-|----------|--------|--------------------------------------|-------------------|-------------|------|
-| 10       | 310    | Heizkurve 1 aktiviert                | 0 = Aus, 1 = Ein  |             |      |
-| 11       | 311    | Außentemperatur niedrig (P1)         |                   | -20 bis 25  | °C   |
-| 12       | 312    | Außentemperatur hoch (P2)            |                   | -9 bis 25   | °C   |
-| 13       | 315    | Heiztemperatur hoch (P1)             |                   | 20 bis 75   | °C   |
-| 14       | 316    | Heiztemperatur niedrig (P2)          |                   | 20 bis 75   | °C   |
-| 15       | 320    | Konstante Heiztemperatur (Sollwert)  |                   | 20 bis 75   | °C   |
+| Register | Nummer | Description | Value Range | Wertetyp / Parsing |
+|----------|--------|------------|-------------|--------------------|
+| 0 | 001 | Wärmepumpe ein-/ausgeschaltet | | u16 (bool: 0=Aus, 1=Ein) |
+| 1 | 002 | Betriebsmodus | | u16 (enum: 0=Standby,1=Heizen,2=Kühlen,3=WW,4=Auto) |
+| 2 | 003 | Warmwasser-Sofort-Funktion | | u16 (bool) |
 
 ---
 
-### ❄️ Kühlkurve 1 (Einstellungen)
+## 🔥 Heizkurve 1
 
-| Register | Nummer | Description                          | Mapping           | Value Range | Unit |
-|----------|--------|--------------------------------------|-------------------|-------------|------|
-| 20       | 350    | Kühlkurve 1 aktiviert                | 0 = Aus, 1 = Ein  |             |      |
-| 21       | 351    | Außentemperatur niedrig (P1)         |                   | 16 bis 32   | °C   |
-| 22       | 352    | Außentemperatur hoch (P2)            |                   | 29 bis 45   | °C   |
-| 23       | 355    | Kühltemperatur hoch (P1)             |                   | 7 bis 30    | °C   |
-| 24       | 356    | Kühltemperatur niedrig (P2)          |                   | 7 bis 30    | °C   |
-| 25       | 360    | Konstante Kühltemperatur (Sollwert)  |                   | 7 bis 30    | °C   |
-
----
-
-### 🔥 Heizkurve 2 (Einstellungen)
-
-| Register | Nummer | Description                          | Mapping           | Value Range | Unit |
-|----------|--------|--------------------------------------|-------------------|-------------|------|
-| 30       | 410    | Heizkurve 2 aktiviert                | 0 = Aus, 1 = Ein  |             |      |
-| 31       | 411    | Außentemperatur niedrig (P1)         |                   | -20 bis 25  | °C   |
-| 32       | 412    | Außentemperatur hoch (P2)            |                   | -9 bis 25   | °C   |
-| 33       | 415    | Heiztemperatur hoch (P1)             |                   | 20 bis 75   | °C   |
-| 34       | 416    | Heiztemperatur niedrig (P2)          |                   | 20 bis 75   | °C   |
-| 35       | 420    | Konstante Heiztemperatur (Sollwert)  |                   | 20 bis 75   | °C   |
+| Register | Nummer | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|--------|------------|-------------|------|--------------------|
+| 10 | 310 | Aktiv | | | u16 (bool) |
+| 11 | 311 | Außentemperatur P1 | -20..25 | °C | s16 |
+| 12 | 312 | Außentemperatur P2 | -9..25 | °C | s16 |
+| 13 | 315 | Heiztemp P1 | 20..75 | °C | u16 |
+| 14 | 316 | Heiztemp P2 | 20..75 | °C | u16 |
+| 15 | 320 | Konstant Soll | 20..75 | °C | u16 |
 
 ---
 
-### ❄️ Kühlkurve 2 (Einstellungen)
+## ❄️ Kühlkurve 1
 
-| Register | Nummer | Description                          | Mapping           | Value Range | Unit |
-|----------|--------|--------------------------------------|-------------------|-------------|------|
-| 40       | 450    | Kühlkurve 2 aktiviert                | 0 = Aus, 1 = Ein  |             |      |
-| 41       | 451    | Außentemperatur niedrig (P1)         |                   | 16 bis 32   | °C   |
-| 42       | 452    | Außentemperatur hoch (P2)            |                   | 29 bis 45   | °C   |
-| 43       | 455    | Kühltemperatur hoch (P1)             |                   | 7 bis 30    | °C   |
-| 44       | 456    | Kühltemperatur niedrig (P2)          |                   | 7 bis 30    | °C   |
-| 45       | 560    | Konstante Kühltemperatur (Sollwert)  |                   | 7 bis 30    | °C   |
-
----
-
-### 🚿 Warmwasser (Einstellungen)
-
-| Register | Nummer | Description                 | Mapping | Value Range | Unit |
-|----------|--------|-----------------------------|---------|-------------|------|
-| 50       | 501    | Warmwasser Sollwert         |         | 25 bis 75   | °C   |
-| 51       | 522    | Warmhalten Sollwert         |         | 30 bis 55   | °C   |
+| Register | Nummer | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|--------|------------|-------------|------|--------------------|
+| 20 | 350 | Aktiv | | | u16 (bool) |
+| 21 | 351 | Außentemperatur P1 | 16..32 | °C | u16 |
+| 22 | 352 | Außentemperatur P2 | 29..45 | °C | u16 |
+| 23 | 355 | Kühltemp P1 | 7..30 | °C | u16 |
+| 24 | 356 | Kühltemp P2 | 7..30 | °C | u16 |
+| 25 | 360 | Konstant Soll | 7..30 | °C | u16 |
 
 ---
 
-### ⚡ Vernetzung
+## 🔥 Heizkurve 2
 
-| Register | Nummer | Description                 | Mapping | Value Range | Unit |
-|----------|--------|-----------------------------|---------|-------------|------|
-| 60       | 815    | SG-Ready aktivieren                            | 0 = Kein Eingriff, 1 = Normalbetrieb 2 = Sperre, 3 = Temperaturen anheben | -   | -   |
-| 61       | 811    | SG Ready Heiztemperatur anheben um (ΔT)        |         | 0 bis 30   | K   |
-| 62       | 812    | SG Ready Warmwassertemperatur anheben um (ΔT)  |         | 0 bis 30   | K   |
-| 63       | 813    | SG Ready Kühltemperatur senken um (ΔT)         |         | 0 bis 30   | K   |
-| 65       | 808    | §14a EnWG manuell aktivieren                   | 0 = Aus, 1 = Ein  |  |      |
-
----
-
-### ⚡ Überschuss-Regelung (beta-Version)
-
-| Register | Nummer | Description                 | Mapping | Value Range | Unit |
-|----------|--------|-----------------------------|---------|-------------|------|
-| 70       | -    | Überschuss-Regelung aktivieren                              | 0 = Deaktiviert, 1 = Aktiviert| -   | -   |
-| 71       | -    | Verfügbarer Überschuss        |         | 0 bis 100.000   | W   |
-
-
+| Register | Nummer | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|--------|------------|-------------|------|--------------------|
+| 30 | 410 | Aktiv | | | u16 (bool) |
+| 31 | 411 | Außentemperatur P1 | -20..25 | °C | s16 |
+| 32 | 412 | Außentemperatur P2 | -9..25 | °C | s16 |
+| 33 | 415 | Heiztemp P1 | 20..75 | °C | u16 |
+| 34 | 416 | Heiztemp P2 | 20..75 | °C | u16 |
+| 35 | 420 | Konstant Soll | 20..75 | °C | u16 |
 
 ---
 
+## ❄️ Kühlkurve 2
 
-### 🔌 Allgemeines (Betriebswerte)
-
-| Register | Key  | Description                               | Mapping                                                                   | Value Range | Unit |
-|----------|------|-------------------------------------------|----------------------------------------------------------------------------|-------------|------|
-| 100      | controller_v | Software Version                          | 240 = 2.40                                                            |             |      |
-| 101      | mode         | Betriebsmodus                             | 1 = Standby, 2 = Heizbetrieb, 3 = Kühlbetrieb, 4 = Warmwasser         |             |      |
-| 102      | error     | Anlage auf Grund Fehler gestoppt          | 1 = kein Fehler, 0 = Fehler                                              |             |      |
-| 103      | 14a     | §14a EnWG Status                          | 0 = Aus, 1 = Ein                                                           |             |      |
-| 104      | sg     | SG-Ready Status                           | 0 = Aus, 1 = Normal, 2 = Sperre, 3 = Temperaturen anheben, 4 = Anlaufbefehl |             |      |
-| 105      | evu     | EVU Status                                | 0 = Aus, 1 = Ein                                                           |             |      |
-
-Hinweis: Error berücksichtigt folgende Meldungen: P16, F20, S14, S13, S05, S08, F01, F02, F03, F04, F05, F06, F07, F08, F10, F11, F12, P11, E01, E02, E03, E04, E05, E06, E07, E08.
+| Register | Nummer | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|--------|------------|-------------|------|--------------------|
+| 40 | 450 | Aktiv | | | u16 (bool) |
+| 41 | 451 | Außentemperatur P1 | 16..32 | °C | u16 |
+| 42 | 452 | Außentemperatur P2 | 29..45 | °C | u16 |
+| 43 | 455 | Kühltemp P1 | 7..30 | °C | u16 |
+| 44 | 456 | Kühltemp P2 | 7..30 | °C | u16 |
+| 45 | 560 | Konstant Soll | 7..30 | °C | u16 |
 
 ---
 
-### 🔥 Sollwerte (Betriebswerte)
-Die Sollwerte berücksichtigen die zum aktuellen Zeitpunkt vorliegende Sollwerte, welche z.B. durch SG-Ready beeinflusst werden können.
+## 🚿 Warmwasser
 
-| Register | Key  | Description                        | Mapping     | Value Range | Unit |
-|----------|------|------------------------------------|-------------|-------------|------|
-| 110      | h_target     | Sollwert Heizbetrieb               | Wert / 10   |             | °C   |
-| 111      | h1_target     | Sollwert Heizen 1                  | Wert / 10   |             | °C   |
-| 112      | h2_target     | Sollwert Heizen 2                  | Wert / 10   |             | °C   |
-| 113      | c_target     | Sollwert Kühlbetrieb               | Wert / 10   |             | °C   |
-| 114      | c1_target     | Sollwert Kühlen 1                  | Wert / 10   |             | °C   |
-| 115      | c2_target     | Sollwert Kühlen 2                  | Wert / 10   |             | °C   |
-| 116      | hw_target     | Sollwert Warmwasserbereitung      | Wert   |             | °C   |
+| Register | Nummer | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|--------|------------|-------------|------|--------------------|
+| 50 | 501 | Sollwert | 25..75 | °C | u16 |
+| 51 | 522 | Warmhalten | 30..55 | °C | u16 |
 
 ---
 
-### 🌡️ Fühlerwerte (Betriebswerte)
-Die Fühlerwerte sind die anliegenden Temperaturfühler der Wärmepumpe.
+## ⚡ Vernetzung
 
-| Register | Key  | Description                      | Mapping   | Value Range | Unit |
-|----------|------|----------------------------------|-----------|-------------|------|
-| 120      | tk   | TK Heiz-/Kühltemperatur          | Wert / 10 |             | °C   |
-| 121      | tk1  | TK1 Kreis 1 Temperatur           | Wert / 10 |             | °C   |
-| 122      | tk2  | TK2 Kreis 2 Temperatur           | Wert / 10 |             | °C   |
-| 123      | tw   | TW Warmwassertemperatur          | Wert / 10 |             | °C   |
-| 124      | tr   | TR Raumtemperatur                | Wert / 10 |             | °C   |
-| 125      | trl  | TRL Rücklauftemperatur           | Wert / 10 |             | °C   |
-| 126      | tvl  | TVL Vorlauftemperatur            | Wert / 10 |             | °C   |
+| Register | Nummer | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|--------|------------|-------------|------|--------------------|
+| 60 | 815 | SG Ready Modus | | | u16 (enum: 0–3) |
+| 61 | 811 | ΔT Heizen | 0..30 | K | u16 |
+| 62 | 812 | ΔT WW | 0..30 | K | u16 |
+| 63 | 813 | ΔT Kühlen | 0..30 | K | u16 |
+| 65 | 808 | §14a aktiv | | | u16 (bool) |
 
 ---
 
-### 💧 Pumpen und Aktoren (Betriebswerte)
+## ⚡ Überschuss
 
-| Register | Key  | Description                                      | Mapping           | Value Range   | Unit   |
-|----------|------|--------------------------------------------------|-------------------|----------------|--------|
-| 130      | v    | V - Volumenstrom                                 | Wert / 10         |                | l/min  |
-| 131      | pk   | PK - Umwälzpumpe eingeschaltet                   |                   | 0 = Aus, 1 = Ein |       |
-| 132      | pkl  | PK - Umwälzpumpe Leistung                        | Wert / 10         | 0 – 100        | %      |
-| 133      | pk1  | PK1 - Umwälzpumpe Kreis 1 eingeschaltet          | 0 = Aus, 1 = Ein  |                |        |
-| 134      | pk2  | PK2 - Umwälzpumpe Kreis 2 eingeschaltet          | 0 = Aus, 1 = Ein  |                |        |
-| 135      | pww  | PWW - Zirkulationspumpe Warmwasser eingeschaltet | 0 = Aus, 1 = Ein  |                |        |
-| 136      | vf   | VF - Verdichterfrequenz                          |                   | 0 – 90         | Hz     |
-| 137      | ld1  | LD1 - Lüfter 1 Drehzahl                          |                   | 0 – 999        | rpm    |
-| 138      | ld2  | LD2 - Lüfter 2 Drehzahl                          |                   | 0 – 999        | rpm    |
----
-
-### 🌡️ Außentemperaturen (Betriebswerte)
-
-| Register | Key  | Description                           | Mapping     | Value Range | Unit |
-|----------|------|---------------------------------------|-------------|-------------|------|
-| 140      | ta   | TA - Außentemperatur                  | Wert / 10   |             | °C   |
-| 141      | ta1  | TA1 - Außentemperatur Mittelwert 1h   | Wert / 10   |             | °C   |
-| 142      | ta4  | TA4 - Außentemperatur Mittelwert 4h   | Wert / 10   |             | °C   |
-| 143      | ta8  | TA8 - Außentemperatur Mittelwert 8h   | Wert / 10   |             | °C   |
-| 144      | ta24 | TA24 - Außentemperatur Mittelwert 24h | Wert / 10   |             | °C   |
+| Register | Nummer | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|--------|------------|-------------|------|--------------------|
+| 70 | - | Aktiv | | | u16 (bool) |
+| 71 | - | Überschuss | 0..100000 | W | u16 |
 
 ---
 
-### 🔌 Leistung Live (Betriebswerte)
+## 🔌 Betriebswerte
 
-| Register | Key  | Description                                          | Mapping     | Value Range | Unit |
-|----------|------|------------------------------------------------------|-------------|-------------|------|
-| 170      | out_hp | Leistungsabgabe Wärmepumpe (thermisch)              | Wert * 10   |             | W   |
-| 171      | in_hp  | Leistungsaufnahme Wärmepumpe (elektrisch)           | Wert * 10   |             | W   |
-| 172      | efficiency_hp     | Leistungszahl Wärmepumpe                            | Wert / 100  |             | –    |
-| 173      | efficiency_total  | Leistungszahl Gesamtsystem (inkl. Zusatzheizung)    | Wert / 100  |             | –    |
-| 174      | out_backup        | Leistungsabgabe Zusatz-/Notheizung (thermisch)      | Wert * 10   |             | W   |
-| 175      | in_backup         | Leistungsaufnahme Zusatz-/Notheizung (elektrisch)   | Wert * 10   |             | W   |
-| 176      | out_total        | Leistungsabgabe Gesamtsystem (thermisch)      | Wert * 10   |             | W   |
-| 177      | in_total         | Leistungsaufnahme Gesamtsystem (elektrisch)   | Wert * 10   |             | W   |
+| Register | Key | Description | Value Range | Unit | Wertetyp / Parsing |
+|----------|-----|------------|-------------|------|--------------------|
+| 100 | controller_v | Version | | | u16 |
+| 101 | mode | Modus | | | u16 (enum) |
+| 102 | error | Fehlerstatus | | | u16 (bool inverted) |
+| 103 | 14a | Status | | | u16 (bool) |
+| 104 | sg | SG Status | | | u16 (enum) |
+| 105 | evu | EVU | | | u16 (bool) |
 
 ---
 
-### ⚡ Tag Energiewerte (Betriebswerte)
+## 🔥 Sollwerte
 
-| Register | Key  | Description                                                          | Mapping     | Value Range | Unit |
-|----------|------|----------------------------------------------------------------------|-------------|-------------|------|
-| 180      | day_hp_out_h     | Tag Heizbetrieb thermische Leistungsabgabe                           | Wert / 100  |             | kWh  |
-| 181      | day_hp_in_h    | Tag Heizbetrieb elektrische Leistungsaufnahme                        | Wert / 100  |             | kWh  |
-| 182      | day_hp_out_c     | Tag Kühlbetrieb thermische Leistungsabgabe                           | Wert / 100  |             | kWh  |
-| 183      | day_hp_in_c     | Tag Kühlbetrieb elektrische Leistungsaufnahme                        | Wert / 100  |             | kWh  |
-| 184      | day_hp_out_hw     | Tag Warmwasserbetrieb thermische Leistungsabgabe                     | Wert / 100  |             | kWh  |
-| 185      | day_hp_in_hw     | Tag Warmwasserbetrieb elektrische Leistungsaufnahme                  | Wert / 100  |             | kWh  |
-| 186      | day_backup3_out_h     | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) therm. Leistungsabgabe  | Wert / 100  |             | kWh  |
-| 187      | day_backup3_in_h     | Tag Heizbetrieb Zusatzheizung Stufe 1 (3 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
-| 188      | day_backup3_out_hw     | Tag WW-Betrieb Zusatzheizung Stufe 1 (3 kW) therm. Leistungsabgabe   | Wert / 100  |             | kWh  |
-| 189      | day_backup3_in_hw     | Tag WW-Betrieb Zusatzheizung Stufe 1 (3 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
-| 190      | day_backup6_out_h     | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) therm. Leistungsabgabe  | Wert / 100  |             | kWh  |
-| 191      | day_backup6_in_h     | Tag Heizbetrieb Zusatzheizung Stufe 2 (6 kW) elektr. Leistungsaufnahme | Wert / 100 |             | kWh  |
-| 192      | day_backup6_out_hw     | Tag WW-Betrieb Zusatzheizung Stufe 2 (6 kW) therm. Leistungsabgabe   | Wert / 100  |             | kWh  |
-| 193      | day_backup6_in_hw     | Tag WW-Betrieb Zusatzheizung Stufe 2 (6 kW) elektr. Leistungsaufnahme | Wert / 100  |             | kWh  |
+| Register | Key | Description | Unit | Wertetyp / Parsing |
+|----------|-----|------------|------|--------------------|
+| 110 | h_target | Heizen | °C | s16 /10 |
+| 111 | h1_target | Heizen 1 | °C | s16 /10 |
+| 112 | h2_target | Heizen 2 | °C | s16 /10 |
+| 113 | c_target | Kühlen | °C | s16 /10 |
+| 114 | c1_target | Kühlen 1 | °C | s16 /10 |
+| 115 | c2_target | Kühlen 2 | °C | s16 /10 |
+| 116 | hw_target | Warmwasser | °C | u16 |
+
+---
+
+## 🌡️ Fühlerwerte
+
+| Register | Key | Description | Unit | Wertetyp / Parsing |
+|----------|-----|------------|------|--------------------|
+| 120 | tk | TK | °C | s16 /10 |
+| 121 | tk1 | TK1 | °C | s16 /10 |
+| 122 | tk2 | TK2 | °C | s16 /10 |
+| 123 | tw | TW | °C | s16 /10 |
+| 124 | tr | TR | °C | s16 /10 |
+| 125 | trl | TRL | °C | s16 /10 |
+| 126 | tvl | TVL | °C | s16 /10 |
+
+---
+
+## 💧 Pumpen / Aktoren
+
+| Register | Key | Description | Unit | Wertetyp / Parsing |
+|----------|-----|------------|------|--------------------|
+| 130 | v | Volumenstrom | l/min | u16 /10 |
+| 131 | pk | Pumpe | | u16 (bool) |
+| 132 | pkl | Leistung | % | u16 /10 |
+| 133 | pk1 | Kreis 1 | | u16 (bool) |
+| 134 | pk2 | Kreis 2 | | u16 (bool) |
+| 135 | pww | WW Pumpe | | u16 (bool) |
+| 136 | vf | Verdichter | Hz | u16 |
+| 137 | ld1 | Lüfter 1 | rpm | u16 |
+| 138 | ld2 | Lüfter 2 | rpm | u16 |
+
+---
+
+## 🌡️ Außentemperaturen
+
+| Register | Key | Description | Unit | Wertetyp / Parsing |
+|----------|-----|------------|------|--------------------|
+| 140 | ta | TA | °C | s16 /10 |
+| 141 | ta1 | TA1 | °C | s16 /10 |
+| 142 | ta4 | TA4 | °C | s16 /10 |
+| 143 | ta8 | TA8 | °C | s16 /10 |
+| 144 | ta24 | TA24 | °C | s16 /10 |
+
+---
+
+## 🔌 Leistung
+
+| Register | Key | Description | Unit | Wertetyp / Parsing |
+|----------|-----|------------|------|--------------------|
+| 170 | out_hp | thermisch | W | u16 *10 |
+| 171 | in_hp | elektrisch | W | u16 *10 |
+| 172 | efficiency_hp | COP | | u16 /100 |
+| 173 | efficiency_total | COP gesamt | | u16 /100 |
+| 174 | out_backup | thermisch | W | u16 *10 |
+| 175 | in_backup | elektrisch | W | u16 *10 |
+| 176 | out_total | thermisch | W | u16 *10 |
+| 177 | in_total | elektrisch | W | u16 *10 |
+
+---
+
+## ⚡ Tageswerte
+
+| Register | Key | Description | Unit | Wertetyp / Parsing |
+|----------|-----|------------|------|--------------------|
+| 180 | day_hp_out_h | Heizen thermisch | kWh | u16 /100 |
+| 181 | day_hp_in_h | Heizen elektrisch | kWh | u16 /100 |
+| 182 | day_hp_out_c | Kühlen thermisch | kWh | u16 /100 |
+| 183 | day_hp_in_c | Kühlen elektrisch | kWh | u16 /100 |
+| 184 | day_hp_out_hw | WW thermisch | kWh | u16 /100 |
+| 185 | day_hp_in_hw | WW elektrisch | kWh | u16 /100 |
+| 186 | day_backup3_out_h | Backup 3kW thermisch | kWh | u16 /100 |
+| 187 | day_backup3_in_h | Backup 3kW elektrisch | kWh | u16 /100 |
+| 188 | day_backup3_out_hw | Backup WW thermisch | kWh | u16 /100 |
+| 189 | day_backup3_in_hw | Backup WW elektrisch | kWh | u16 /100 |
+| 190 | day_backup6_out_h | Backup 6kW thermisch | kWh | u16 /100 |
+| 191 | day_backup6_in_h | Backup 6kW elektrisch | kWh | u16 /100 |
+| 192 | day_backup6_out_hw | Backup WW thermisch | kWh | u16 /100 |
+| 193 | day_backup6_in_hw | Backup WW elektrisch | kWh | u16 /100 |
 
