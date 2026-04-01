@@ -7,6 +7,7 @@ Register-Dokumentation für Xtherma Wärmepumpen.
 ### Nutzung
 
 - **Rechte:** Block 0-99: Lesen & Schreiben (je alle 1 min; ausgenommen 0, 1, 2, 60, 65 nur alle 30 min), Block 100 - 199 nur lesen
+- **Alle Register sind 16Bit Holding Register
 - **Port:** 502  
 - **Slave-ID:** 1  
 - **Optimales Pollingintervall:** >60 Sekunden  
